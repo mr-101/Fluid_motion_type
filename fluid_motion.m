@@ -27,6 +27,3 @@ elseif(Re >= 4000)
 else
 	fprintf('Uncertain critical Zone');
 end
-
-
-			
