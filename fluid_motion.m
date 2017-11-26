@@ -9,20 +9,20 @@ Re = Rho*v*D/Muo;
 if(Re < 2500)
 	f = 64/Re;
 	hL = f*(L/D)*(v^2/(2*g));
-	fprintf('Laminar flow \nFriction head loss hL= %g \n', hL);
+	fprintf('Laminar flow \n Friction head loss hL= %g \n', hL);
 elseif(Re >= 4000)
 	if(((E/D)*Re^0.9) <= 31)
 		f = 0.25*(log(5.74/Re^0.9))^-2;
 		hL = f*(L/D)*(v^2/(2*g));
-		fprintf('Smooth turbulent flow \nFriction head loss hL= %g \n', hL);
+		fprintf('Smooth turbulent flow \n Friction head loss hL= %g \n', hL);
     elseif(((E/D)*Re^0.9) >= 448)
 		f = 0.25*(log((E/D)/3.7))^-2;
 		hL = f*(L/D)*(v^2/(2*g));
-		fprintf('Fully rough turbulent flow \nFriction head loss hL= %g \n', hL);
+		fprintf('Fully rough turbulent flow \n Friction head loss hL= %g \n', hL);
 	else 
 		f = 0.25*(log((E/D)/3.7 + log(5.74/Re^0.9)))^-2;
 		hL = f*(L/D)*(v^2/(2*g));
-		fprintf('Transient rough turbulent flow \nFriction head loss hL= %g \n', hL);
+		fprintf('Transient rough turbulent flow \n Friction head loss hL= %g \n', hL);
 	end
 else
 	fprintf('Uncertain critical Zone');
