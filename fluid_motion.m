@@ -12,15 +12,15 @@ if(Re < 2500)
 	fprintf('Laminar flow \n Friction head loss hL= %g \n', hL);
 elseif(Re >= 4000)
 	if(((E/D)*Re^0.9) <= 31)
-		f = 0.25*(log(5.74/Re^0.9))^-2;
+		f = 0.25*(log2(5.74/Re^0.9))^-2;
 		hL = f*(L/D)*(v^2/(2*g));
 		fprintf('Smooth turbulent flow \n Friction head loss hL= %g \n', hL);
     elseif(((E/D)*Re^0.9) >= 448)
-		f = 0.25*(log((E/D)/3.7))^-2;
+		f = 0.25*(log2((E/D)/3.7))^-2;
 		hL = f*(L/D)*(v^2/(2*g));
 		fprintf('Fully rough turbulent flow \n Friction head loss hL= %g \n', hL);
 	else 
-		f = 0.25*(log((E/D)/3.7 + log(5.74/Re^0.9)))^-2;
+		f = 0.25*(log2((E/D)/3.7 + log(5.74/Re^0.9)))^-2;
 		hL = f*(L/D)*(v^2/(2*g));
 		fprintf('Transient rough turbulent flow \n Friction head loss hL= %g \n', hL);
 	end
